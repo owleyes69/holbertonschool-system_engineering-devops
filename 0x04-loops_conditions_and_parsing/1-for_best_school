@@ -2,4 +2,6 @@
 # Display Holberton School 10 times.
 
 for (( i=0; i<10; i++ ))
-do
+	do
+		    echo "Best School"
+done
