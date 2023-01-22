@@ -1,38 +1,20 @@
 #!/usr/bin/env bash
-# Script gives info on file (exist? empty? file and not directory?)
+#fizzbuzz stuf
 
-file="school"
-
-if [ -e "$file" ]; then
-    echo "$file file exists"
-
-    if [ -s "$file" ]; then
-	echo "$file file is not empty"
-    else
-	echo "$file file is empty"
-    fi
-
-    if [ -f "$file" ]; then
-	echo "$file is a regular file"
-    fi
-
-else
-    echo "$file file does not exist"
-fi
-
-#!/usr/bin/env bash
-# FizzBuzz - print 1 to 100, "Fizz" for multiples of 3,
-# "Buzz" for multiples of 5, and "FizzBuzz" for multiples of 3 and 5
-
-for (( i=1; i < 101; i++ ))
+count=1
+while [ $count -ne 101 ]
 do
-    if (( i % 15 == 0 )); then
+    if [ $((count % 15)) -eq 0 ]
+    then
 	echo "FizzBuzz"
-    elif (( i % 3 == 0 )); then
+    elif [ $((count % 3)) -eq 0 ]
+    then
 	echo "Fizz"
-    elif (( i % 5 == 0 )); then
-	echo "Buzz"
+    elif [ $((count % 5)) -eq 0 ]
+    then
+        echo "Buzz"
     else
-	echo "$i"
+	echo $count
     fi
+    ((count++))
 done
